@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "dep": "((cd client && npm i) && cd ../server) && npm i", 
-    "mobile": "start cmd /k \"cd mobile && npm run start\"",
-    "web": "start cmd /k \"cd server && npm run start\" & start cmd /k \"cd client && npm run start\"",
-    "webDev": "start cmd /k \"cd server && npm run dev\" & start cmd /k \"cd client && npm run start\"",
+    "mobile": "start cmd /k \"cd mobile && npm run start\"", 
+    "web": "start cmd /k \"cd server && npm run start\" & start cmd /k \"cd client && npm run start\"", 
+    "webDev": "start cmd /k \"cd server && npm run dev\" & start cmd /k \"cd client && npm run start\"", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
