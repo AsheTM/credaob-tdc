@@ -2,6 +2,7 @@
  *  @author         CREDAOB Team
  */
 const
+    config  = require("../config.json").socket, 
     socket  = require("socket.io");
 
 
@@ -9,7 +10,7 @@ const
  *  @description    Declare constants section
  */
 const 
-    PORT    = 4444, 
+    PORT    = config.port || 4444, 
     io      = socket(PORT);
 
 
@@ -20,4 +21,4 @@ const
 io.on('connection', (client) => {
     // Events
 });
-io.listen(4444);
+io.listen(PORT);

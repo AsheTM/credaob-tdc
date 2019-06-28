@@ -1,0 +1,24 @@
+{
+    "app": {
+        "name": "Président/Révolution"
+    }, 
+
+    "server": {
+        "port": 3000, 
+        "settings": {
+            "trust proxy": false
+        }, 
+
+        "router": {
+            "settings": {
+                "caseSensitive": true, 
+                "mergeParams": false, 
+                "strict": false
+            }
+        }
+    }, 
+    
+    "socket": {
+        "port": 3001
+    }
+}
