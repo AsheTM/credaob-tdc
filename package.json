@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dep": "((cd client && npm i) && cd ../server) && npm i", 
-    "mobile": "start cmd /k \"cd mobile && npm run start\"", 
-    "web": "start cmd /k \"cd server && npm run start\" & start cmd /k \"cd client && npm run start\"", 
-    "webDev": "start cmd /k \"cd server && npm run dev\" & start cmd /k \"cd client && npm run start\"", 
+    "dep": "((cd client && npm i) && cd ../server) && npm i",
+    "mobile": "start cmd /k \"cd mobile && npm run start\"",
+    "web": "start cmd /k \"cd server && npm run start\" & start cmd /k \"cd server && npm run socket\" & start cmd /k \"cd client && npm run start\"",
+    "webDev": "start cmd /k \"cd server && npm run startDev\" & start cmd /k \"cd server && npm run socketDev\" & start cmd /k \"cd client && npm run start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +18,5 @@
   "bugs": {
     "url": "https://github.com/AsheTM/credaob-tdc/issues"
   },
-  "homepage": "https://github.com/AsheTM/credaob-tdc#readme",
-  "dependencies": {
-    "ngx-socket-io": "^2.1.1"
-  }
+  "homepage": "https://github.com/AsheTM/credaob-tdc#readme"
 }
