@@ -2,8 +2,7 @@ import { Card } from "./card";
 import { Deck } from "./deck";
 
 const
-    { assert, expect, should }  = require("chai"), 
-    mocha                       = require("mocha");
+    { assert, expect, should }  = require("chai");
 
 describe("Deck Class Test", () => {
 

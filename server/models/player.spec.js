@@ -1,8 +1,7 @@
 import { Player } from "./room";
 
 const
-    { assert, expect, should }  = require("chai"), 
-    mocha                       = require("mocha");
+    { assert, expect, should }  = require("chai");
 
 describe("Player Class Test", () => {
 

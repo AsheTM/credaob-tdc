@@ -1,8 +1,7 @@
 import { Settings } from "./settings";
 
 const
-    { assert, expect, should }  = require("chai"), 
-    mocha                       = require("mocha");
+    { assert, expect, should }  = require("chai");
 
 describe("Settings Class Test", () => {
 

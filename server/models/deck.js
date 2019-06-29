@@ -1,7 +1,7 @@
 /**
  *  @
  */
-import { Card, TYPE, NUMBER } from "./card";
+let { Card, TYPE, NUMBER }  = require("./card");
 
 module.exports  = class Deck {
 

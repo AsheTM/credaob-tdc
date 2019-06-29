@@ -1,8 +1,7 @@
 import { Card, TYPE, NUMBER } from "./card";
 
 const
-    { assert, expect, should }  = require("chai"), 
-    mocha                       = require("mocha");
+    { assert, expect, should }  = require("chai");
 
 describe("Card Class Test", () => {
 

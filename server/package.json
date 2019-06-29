@@ -8,7 +8,7 @@
     "startDev": "nodemon server",
     "socket": "node ./socket/socket.js",
     "socketDev": "nodemon ./socket/socket.js",
-    "test": "mocha || echo \"Error: no test specified\" && exit 1"
+    "test": "karma start || echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -18,9 +18,21 @@
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.2",
+    "babel-preset-es2015": "^6.24.1",
+    "browserify": "^16.2.3",
     "chai": "^4.2.0",
+    "eslint-plugin-jasmine": "^2.10.1",
+    "karma": "^4.1.0",
+    "karma-babel-preprocessor": "^8.0.0",
+    "karma-browserify": "^6.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
     "mocha": "^6.1.4",
-    "mocha-steps": "^1.3.0",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "watchify": "^3.11.1"
   }
 }
