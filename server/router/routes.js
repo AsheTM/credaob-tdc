@@ -16,7 +16,7 @@ router.get("/", (req, res, next) => {
     // 
 });
 
-router.get("/", (req, res, next) => {
+router.get("/:room", (req, res, next) => {
     // 
 });
 

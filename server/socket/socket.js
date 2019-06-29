@@ -2,6 +2,8 @@
  *  @author         CREDAOB Team
  */
 const
+    app     = require('express')(), 
+    http    = require("http").createServer(app), 
     config  = require("../config.json").socket, 
     socket  = require("socket.io");
 
@@ -11,7 +13,7 @@ const
  */
 const 
     PORT    = config.port || 4444, 
-    io      = socket(PORT);
+    io      = socket(http);
 
 
 
@@ -19,6 +21,22 @@ const
  *  @description    Web Socket events
  */
 io.on('connection', (client) => {
-    // Events
+    console.log('Client connected...');
+
+    client.on("test", (data) => {
+        console.log({data});
+        client.to("CREDAOB").emit("testBack", {payload: "Some data..."});
+    });
 });
-io.listen(PORT);
+
+
+/**
+ *  @description    Launch the socket
+ */
+io.listen(PORT, () => {
+    console.log(`
+    ------------------------------------------------------
+    
+        The socket is listening on ${ PORT }\n
+    ------------------------------------------------------`);
+});
