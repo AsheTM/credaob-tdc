@@ -8,8 +8,8 @@
     "startDev": "nodemon server",
     "socket": "node ./socket/socket",
     "socketDev": "nodemon ./socket/socket",
-    "debug-server": "node server --inspect-brk", 
-    "debug-socket": "node ./socket/socket --inspect-brk", 
+    "debug-server": "node server --inspect-brk",
+    "debug-socket": "node ./socket/socket --inspect-brk",
     "mocha": "mocha test --require @babel/register --recursive --reporter spec --extension spec.js --color true",
     "karma": "karma start",
     "test": "npm run mocha || npm run karma || echo \"Error: no test specified\" && exit 1"
@@ -40,6 +40,7 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.1",
+    "sinon": "^7.3.2",
     "watchify": "^3.11.1"
   }
 }
