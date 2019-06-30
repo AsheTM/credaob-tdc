@@ -1,4 +1,4 @@
-export namespace SocketServiceDecorator {
+export namespace SocketDecorator {
 
     export namespace Room {
 

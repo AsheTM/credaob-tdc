@@ -1,19 +1,19 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Socket, SocketIoConfig } from 'ngx-socket-io';
-import { SocketServiceInterface } from './socket.service.interface';
-import { SocketServiceDecorator } from './socket.service.decorator';
+import { SocketInterface } from './socket.interface';
+import { SocketDecorator } from './socket.decorator';
 
 const CONFIG: SocketIoConfig = {
   url: "", 
   options: {}
 };
 
-let { checkRoom: CheckRoom } = SocketServiceDecorator.Room;
+let { checkRoom: CheckRoom } = SocketDecorator.Room;
 
 @Injectable({
   providedIn: 'root'
 })
-export class SocketService extends Socket implements SocketServiceInterface, OnInit{
+export class SocketService extends Socket implements SocketInterface, OnInit{
 
   constructor(private socket: Socket) {
     super(CONFIG);

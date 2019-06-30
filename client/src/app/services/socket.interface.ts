@@ -1,4 +1,4 @@
-export interface SocketServiceInterface {
+export interface SocketInterface {
 
     /**
      *  @description    Join a room
