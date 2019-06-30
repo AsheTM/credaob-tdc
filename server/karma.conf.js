@@ -12,7 +12,8 @@ module.exports = function(config) {
     // tell it to use babel-preset-es2015
     babelPreprocessor: {
       options: {
-        presets: ['@babel/preset-env'],
+        presets: ['es2015'],
+        "plugins": ["transform-es2015-modules-umd"],
         sourceMap: 'inline'
       },
       filename: function (file) {
@@ -36,13 +37,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'browserify'],
+    frameworks: ['mocha', 'browserify'], 
 
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/@babel/polyfill/dist/polyfill.js', 
-      '**/*.spec.js'
+      'test/**/*.spec.js'
     ],
 
 
@@ -54,7 +54,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      '**/*.spec.js': ['babel', 'browserify'],
+      'test/**/*.spec.js': ['babel', 'browserify'], 
     },
 
 

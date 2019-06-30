@@ -1,33 +1,46 @@
 /**
  *  @
  */
-module.exports  = class Player {
+class Player {
 
-    constructor() { }
-
-    static PlayerBuilder = class {
-        
-        constructor() {
-            this.player = new Player();
-        }
-
-        static id(id) {
-            this.player.id = id;
-            return this;
-        }
-
-        static nickname(nickname = "") {
-            this.player.nickname = nickname.split && nickname || "";
-            return this;
-        }
-
-        static cards(cards = []) {
-            this.player.cards = Array.isArray(cards) && cards || [];
-            return this;
-        }
-
-        static build() {
-            return this.player;
-        }
+    constructor(id = null, nickname = "", cards = []) {
+        this.id         = id;
+        this.nickname   = String(nickname);
+        this.cards      = Array.isArray(cards) && cards || [];
     }
+
+    static builder() {
+        return new PlayerBuilder();
+    }
+}
+
+class PlayerBuilder {
+        
+    constructor() {
+        this.player = new Player();
+    }
+
+    id(id) {
+        this.player.id = id;
+        return this;
+    }
+
+    nickname(nickname = "") {
+        this.player.nickname = String(nickname);
+        return this;
+    }
+
+    cards(cards = []) {
+        let valid = Array.isArray(cards);
+        this.player.cards = valid && cards || [];
+        return this;
+    }
+
+    build() {
+        return this.player;
+    }
+}
+
+module.exports  = {
+    Player
 }

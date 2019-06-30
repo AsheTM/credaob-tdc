@@ -1,5 +1,5 @@
-import { Card } from "./card";
-import { Deck } from "./deck";
+import { Card } from "../../models/card";
+import { Deck } from "../../models/deck";
 
 const
     { assert, expect, should }  = require("chai");

@@ -1,12 +1,12 @@
-import { Settings } from "./settings";
+import { Settings } from "../../models/settings";
 
 const
     { assert, expect, should }  = require("chai");
 
 describe("Settings Class Test", () => {
 
-    it("Should exists", () => {
-        let settings = Settings.SettingsBuilder.build();
+    it("Should exists", (done) => {
+        let settings = Settings.builder().build();
 
         expect(settings).to.exist;
     });

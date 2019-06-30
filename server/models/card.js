@@ -25,56 +25,59 @@ const
 
 class Card {
 
-    power;
-
     constructor(type, number) {
-        if(!type || !number)    throw new Error("Some attributes are missing!");
+        // if(!type || !number)    throw new Error("Some attributes are missing!");
         this.id     = null;
         this.type   = type;
         this.number = number;
+        this.power  = null;
     }
 
-    static CardBuilder = class {
-        
-        constructor() {
-            this.card = new Card();
-        }
-
-        static id(id) {
-            this.card.id = id;
-            return this;
-        }
-
-        static type(type = null) {
-            let valid = Object.values(TYPE).includes(type);
-            this.card.type = valid && type || UNDEFINED;
-            return this;
-        }
-
-        static number(number = null) {
-            let valid = Object.values(NUMBER).includes(number);
-            this.card.number = valid && number || UNDEFINED;
-            return this;
-        }
-
-        // static power(power = null) {
-        //     let valid;
-        //     Card;
-        // }
-
-        static build() {
-            if(!this.card.type || !this.card.number)   throw new Error("Some attributes are missing!");
-            // this.card.power = null;
-            return this.card;
-        }
+    static builder() {
+        return new CardBuilder();
     }
 
-    // set power() {
-    //     this.power;
-    // }
+    set power(value) {
+        this.power;
+    }
 
     get power() {
         return null;
+    }
+}
+
+class CardBuilder {
+        
+    constructor() {
+        this.card = new Card();
+    }
+
+    id(id) {
+        this.card.id = id;
+        return this;
+    }
+
+    type(type = null) {
+        let valid = Object.values(TYPE).includes(type);
+        this.card.type = valid && type || UNDEFINED;
+        return this;
+    }
+
+    number(number = null) {
+        let valid = Object.values(NUMBER).includes(number);
+        this.card.number = valid && number || UNDEFINED;
+        return this;
+    }
+
+    power(power = null) {
+        let valid;
+        Card;
+    }
+
+    build() {
+        if(!this.card.type || !this.card.number)   throw new Error("Some attributes are missing!");
+        // this.card.power = null;
+        return this.card;
     }
 }
 

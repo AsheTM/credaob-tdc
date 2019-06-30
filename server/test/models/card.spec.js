@@ -1,18 +1,12 @@
-import { Card, TYPE, NUMBER } from "./card";
+import { Card, TYPE, NUMBER } from "../../models/card";
 
 const
     { assert, expect, should }  = require("chai");
 
 describe("Card Class Test", () => {
-
-    it("Should throw error", () => {
-        let card = Card.CardBuilder.build();
-
-        expect(card).to.throw;
-    });
     
     it("Should be okey", () => {
-        let card = Card.CardBuilder
+        let card = Card.builder()
                         .type(TYPE.FLOUSS)
                         .number(NUMBER.ONE)
                         .build();

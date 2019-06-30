@@ -1,20 +1,28 @@
 /**
  *  @
  */
-module.exports  = class Settings {
+class Settings {
 
     constructor() { }
 
-    static SettingsBuilder = class {
-        
-        constructor() {
-            this.settings = new Settings();
-        }
-        
-        /* */
-
-        static build() {
-            return this.settings;
-        }
+    static builder(){
+        return new SettingsBuilder();
     }
+}
+
+class SettingsBuilder {
+    
+    constructor() {
+        this.settings = new Settings();
+    }
+    
+    /* */
+
+    build() {
+        return this.settings;
+    }
+}
+
+module.exports  = {
+    Settings
 }
