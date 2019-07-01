@@ -15,8 +15,8 @@ const
  */
 const 
     server  = config.server, 
-    app     = Express();
-    PORT    = process.env.PORT || server.port || 3000, 
+    app     = Express(), 
+    PORT    = process.env.PORT || server.port || 3000;
 
 
 /**
@@ -48,4 +48,5 @@ app.listen(PORT, () => console.log(`
 ------------------------------------------------------
 
     The app is listening on ${ PORT }\n
-------------------------------------------------------`));
+------------------------------------------------------
+`));

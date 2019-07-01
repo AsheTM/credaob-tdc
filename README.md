@@ -14,24 +14,46 @@ Develop the game made by Fahd (EL_FIFA), `Priziden`, and solving Ftaich issues:
 
 ### Tools
 
-First, we have to agree on which platform (WEB, Mobile) and then wich language:
+First, we have to agree on which platform (WEB, Mobile) and then which language:
 
-1. WEB: 
+1. Mobile: 
 1.1. Ionic
 1.2. Firebase
-2. Mobile: 
+2. WEB: 
 2.1. Angular
-2.2. JAVA or NodeJS
+2.2. NodeJS
 
-<br/>
+### Environment
+
+In order the environment, we need to install: 
+
+* NodeJS 10.15.3
+* Angular 8
 
 You can use these optionals tools: 
-1. Cmdr
+1. VSC
+2. Cmdr
 
 ### Entities
 
-Player
+```
+Room: {
+    id:     Number, 
+    name:   String
+}
+```
 
-Card
+```
+Player: {
+    id:         Number, 
+    nickname:   String
+}
+```
 
-Deck
+```
+Deck: {}
+```
+
+```
+Card: {}
+```
