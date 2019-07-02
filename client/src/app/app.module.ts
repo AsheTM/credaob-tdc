@@ -6,16 +6,13 @@ import { AppComponent } from './app.component';
 
 import { SocketService } from './services/socket.service';
 
-import { SocketIoModule } from 'ngx-socket-io';
-
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    SocketIoModule
+    AppRoutingModule
   ],
   providers: [
     SocketService

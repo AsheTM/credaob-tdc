@@ -1,32 +1,47 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Socket, SocketIoConfig } from 'ngx-socket-io';
 import { SocketInterface } from './socket.interface';
-import { SocketDecorator } from './socket.decorator';
+// import { Room } from './socket.decorator';
+import * as io from 'socket.io-client';
 
-const CONFIG: SocketIoConfig = {
-  url: "", 
-  options: {}
+const CONFIG: any = {
+  url: "http://localhost:3001", 
 };
 
-let { checkRoom: CheckRoom } = SocketDecorator.Room;
+// let { checkRoom: CheckRoom } = Room;
 
 @Injectable({
   providedIn: 'root'
 })
-export class SocketService extends Socket implements SocketInterface, OnInit{
+export class SocketService implements SocketInterface, OnInit{
+  
+  private socket: any;
 
-  constructor(private socket: Socket) {
-    super(CONFIG);
+  private isConnected: boolean = false;
+
+  constructor() {
+    this.socket = io(CONFIG.url);
+    this.socket.on('connect', () => {
+      console.info('Connected to Socket.io!');
+      this.isConnected = true;
+    });
+    this.socket.on('disconnect', () => {
+      console.warn('Disconnected to Socket.io!');
+      this.isConnected = false;
+    });
   }
   
   ngOnInit(): void { }
 
-  @CheckRoom()
+  private checkConnection() {
+    return this.isConnected;
+  }
+
+  // @CheckRoom()
   joinRoom(room: any): void {
     throw new Error("Method not implemented.");
   }
 
-  @CheckRoom()
+  // @CheckRoom()
   createRoom(): any {
     throw new Error("Method not implemented.");
   }
