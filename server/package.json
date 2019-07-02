@@ -9,8 +9,7 @@
     "debug-server": "node server --inspect-brk",
     "debug-socket": "node ./socket/socket --inspect-brk",
     "mocha": "mocha test --require @babel/register --recursive --reporter spec --extension spec.js --color true",
-    "karma": "karma start",
-    "test": "npm run mocha || npm run karma || echo \"Error: no test specified\" && exit 1"
+    "test": "npm run mocha || echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -31,14 +30,8 @@
     "browserify": "^16.2.3",
     "chai": "^4.2.0",
     "eslint-plugin-jasmine": "^2.10.1",
-    "karma": "^4.1.0",
-    "karma-babel-preprocessor": "^8.0.0",
-    "karma-browserify": "^6.0.0",
-    "karma-mocha": "^1.3.0",
-    "karma-phantomjs-launcher": "^1.0.4",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.1",
-    "sinon": "^7.3.2",
-    "watchify": "^3.11.1"
+    "sinon": "^7.3.2"
   }
 }
