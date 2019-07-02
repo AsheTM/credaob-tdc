@@ -4,8 +4,9 @@
  */
 const
     Express     = require("express"),
-    // socket      = require("./socket/socket"), 
+    http        = require("http"), 
     bodyParser  = require("body-parser"), 
+    socket      = require("./socket/socket"), 
     config      = require("./config.json"), 
     routes      = require("./router/routes");
 
@@ -14,9 +15,11 @@ const
  *  @description    Declare constants section
  */
 const 
-    server  = config.server, 
-    app     = Express();
-    PORT    = process.env.PORT || server.port || 3000, 
+    server      = config.server, 
+    app         = Express(), 
+    httpServer  = http.Server(app), 
+    io          = socket(httpServer), 
+    PORT        = process.env.PORT || server.port || 3000;
 
 
 /**
@@ -28,8 +31,8 @@ app.set("trust proxy", server.settings["trust proxy"]);
 /**
  *  @description    Middleware section
  */
-app.use(bodyParser({extended: true}));
 app.use(bodyParser.json({}));
+app.use(bodyParser({extended: true}));
 app.use((req, res, next) => {
     console.log(`Req from ${ req.ip }`);
     next();

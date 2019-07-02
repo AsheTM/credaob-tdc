@@ -6,8 +6,6 @@
   "scripts": {
     "start": "node server",
     "startDev": "nodemon server",
-    "socket": "node ./socket/socket",
-    "socketDev": "nodemon ./socket/socket",
     "debug-server": "node server --inspect-brk",
     "debug-socket": "node ./socket/socket --inspect-brk",
     "mocha": "mocha test --require @babel/register --recursive --reporter spec --extension spec.js --color true",
