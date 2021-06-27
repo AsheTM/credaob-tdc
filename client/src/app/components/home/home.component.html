@@ -1,0 +1,17 @@
+
+<div id="Home">
+    <div class="menu" [hidden]="!(!isOwnerRoom() && !isInsideRoom())">
+        <div class="btn" (click)="createRoom()">Create Room</div>
+        <div class="btn" (click)="joinRoom()">Join Room</div>
+    </div>
+
+    <div class="create-room" [hidden]="!(isOwnerRoom() && !isInsideRoom())"></div>
+
+    <div class="room" [hidden]="!(isInsideRoom())">
+        <div class="player" *ngFor=""></div>
+
+        <div class="share-link">
+            <input type="text"/>
+        </div>
+    </div>
+</div>
